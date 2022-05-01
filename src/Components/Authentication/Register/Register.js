@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {BiErrorCircle} from 'react-icons/bi';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../Firebase/Firebase.config";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({
@@ -8,6 +11,9 @@ const Register = () => {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({ emailError: "", passwordError: "" });
+  const [createUserWithEmailAndPassword, createUser, loading, hookError] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const navigate = useNavigate();
   const handleInputEmail = (e) => {
       const emailRegex = /\S+@\S+\.\S+/;
       const validEmail = emailRegex.test(e.target.value);
@@ -43,7 +49,11 @@ const Register = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    createUserWithEmailAndPassword(userInfo.email, userInfo.password);
   };
+  if (createUser) {
+    navigate("/");
+  }
   return (
     <div className=" flex items-center justify-center my-16">
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
@@ -75,6 +85,12 @@ const Register = () => {
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
+            {errors?.emailError && (
+              <p className="text-red-500 text-xs flex items-center ">
+                <BiErrorCircle className="mr-1" />{" "}
+                <span>{errors?.emailError}</span>
+              </p>
+            )}
           </div>
           <div class="form-group mb-6">
             <label class="form-label inline-block mb-2 text-gray-700">
@@ -101,6 +117,13 @@ const Register = () => {
               id="exampleInputPassword2"
               placeholder="Password"
             />
+            {errors?.passwordError && (
+              <p className="text-red-500 text-xs flex items-center ">
+                <BiErrorCircle className="mr-1" />{" "}
+                <span>{errors?.passwordError}</span>
+              </p>
+            )}
+             
           </div>
           <div class="form-group mb-6">
             <label class="form-label inline-block mb-2 text-gray-700">
@@ -127,6 +150,7 @@ const Register = () => {
               id="exampleInputPassword2"
               placeholder=" Confirm Password"
             />
+            
           </div>
           <button
             type="submit"
