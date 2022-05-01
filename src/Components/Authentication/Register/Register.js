@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {BiErrorCircle} from 'react-icons/bi';
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/Firebase.config";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({
@@ -55,7 +56,8 @@ const Register = () => {
     navigate("/");
   }
   return (
-    <div className=" flex items-center justify-center my-16">
+    <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")`}} className="bg-cover hidden md:block w-full my-16">
+        <div className=" flex items-center justify-center "> 
       <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
         <form onSubmit={handleOnSubmit}>
           <div class="form-group mb-6">
@@ -152,7 +154,14 @@ const Register = () => {
             />
             
           </div>
-          <button
+         <div>
+         {hookError && (
+              <p className="text-red-500 text-sm flex items-center justify-center mb-2 ">
+                <BiErrorCircle className="mr-1" />{" "}
+                <span>{hookError?.message}</span>
+              </p>
+            )}
+         <button
             type="submit"
             class="
         w-full
@@ -175,6 +184,7 @@ const Register = () => {
           >
             Register
           </button>
+         </div>
           <p class="text-gray-800 mt-6 text-center text-sm">
             Already have an account?{" "}
             <Link
@@ -184,9 +194,15 @@ const Register = () => {
               Login
             </Link>
           </p>
+          <div className="flex items-center justify-center my-4">
+            <SocialLogin/>
+            </div>
         </form>
       </div>
     </div>
+     
+    </div>
+    
   );
 };
 
