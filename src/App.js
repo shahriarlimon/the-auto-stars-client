@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./Components/Authentication/Login/Login";
 import Register from "./Components/Authentication/Register/Register";
 import Inventory from "./Components/Inventory/Inventory";
+import ManageItems from "./Components/ManageItems/ManageItems";
 import Home from "./Components/Pages/Home/Home";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
@@ -22,6 +23,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/manageItems" element={<ManageItems/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
