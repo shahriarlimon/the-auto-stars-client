@@ -126,7 +126,7 @@ const Inventory = () => {
                   >
                     Stock Now
                   </button>
-                </div>
+                </div> 
               </form>
               <div className="sm:max-w-lg sm:flex">
                 <p className="mt-3 text-xs text-gray-500">

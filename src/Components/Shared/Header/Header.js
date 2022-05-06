@@ -34,11 +34,11 @@ const Header = () => {
           <Link to="/manageItems" class="mr-5 hover:text-gray-900">
             Manage Items
           </Link>
-          <Link to="/myItems" class="mr-5 hover:text-gray-900">
-            My Items
+          <Link to="/addItem" class="mr-5 hover:text-gray-900">
+            Add Item
           </Link>
           <Link to="/" class="mr-5 hover:text-gray-900">
-            Fourth Link
+          My Items
           </Link>
         </nav>
        {user? 
