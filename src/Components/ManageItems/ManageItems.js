@@ -11,7 +11,7 @@ const ManageItems = () => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
       console.log("deleting car with id", id);
-      const url = `http://localhost:5000/car/${id}`;
+      const url = `https://stormy-woodland-63975.herokuapp.com/car/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -13,7 +13,7 @@ const SocialLogin = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
   if (user) {
-    const url = "http://localhost:5000/login";
+    const url = "https://stormy-woodland-63975.herokuapp.com/login";
     fetch(url, {
       method: "POST",
       body: JSON.stringify({

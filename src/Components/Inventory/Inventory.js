@@ -6,14 +6,14 @@ const Inventory = () => {
   const { id } = useParams();
   const [car, setCar] = useState({});
   useEffect(()=>{
-    const url = `http://localhost:5000/car/${id}`;
+    const url = `https://stormy-woodland-63975.herokuapp.com/car/${id}`;
     fetch(url).then(response=>response.json()).then(data=>setCar(data))
   },[id])
 
   const handleIncrease = (id) =>{
     const newQuantity = parseInt(car?.quantity) - 1;
     setCar({...car,quantity:newQuantity})
-    const url = `http://localhost:5000/car/${id}`;
+    const url = `https://stormy-woodland-63975.herokuapp.com/car/${id}`;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify({
@@ -34,7 +34,7 @@ const Inventory = () => {
     const newQuantity =
       parseInt(stockQuantity) + parseInt(car?.quantity);
       setCar({...car,quantity:newQuantity})
-    const url = `http://localhost:5000/car/${id}`;
+    const url = `https://stormy-woodland-63975.herokuapp.com/car/${id}`;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify({

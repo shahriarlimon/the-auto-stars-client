@@ -7,10 +7,10 @@ const AddItem = () => {
     const [user] = useAuthState(auth)
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    const url = "http://localhost:5000/car";
+    const url = "https://stormy-woodland-63975.herokuapp.com/car";
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({...data, email:user?.email}),
       headers: {
           'authorization' :`${user.email} ${localStorage.getItem("accessToken")}`,
           "Content-type": "application/json; charset=UTF-8",

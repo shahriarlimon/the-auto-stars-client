@@ -6,7 +6,7 @@ const useUploadCars = () => {
     const [user] = useAuthState(auth);
  const [uploadedCars,setUploadedCars] = useState([])
     useEffect(()=>{
-        const url = `http://localhost:5000/uploadedCars`;
+        const url = `https://stormy-woodland-63975.herokuapp.com/uploadedCars`;
         fetch(url,{
            headers: {
                'authorization':`${user.email} ${localStorage.getItem("accessToken")} `
