@@ -58,17 +58,17 @@ const Register = () => {
   return (
     <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")`}} className="bg-cover hidden md:block w-full my-16">
         <div className=" flex items-center justify-center "> 
-      <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
+      <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
         <form onSubmit={handleOnSubmit}>
-          <div class="form-group mb-6">
-            <label class="form-label inline-block mb-2 text-gray-700">
+          <div className="form-group mb-6">
+            <label className="form-label inline-block mb-2 text-gray-700">
               Email address
             </label>
             <input
               required
               onBlur={handleInputEmail}
               type="email"
-              class="form-control
+              className="form-control
           block
           w-full
           px-3
@@ -94,15 +94,15 @@ const Register = () => {
               </p>
             )}
           </div>
-          <div class="form-group mb-6">
-            <label class="form-label inline-block mb-2 text-gray-700">
+          <div className="form-group mb-6">
+            <label className="form-label inline-block mb-2 text-gray-700">
               Password
             </label>
             <input
               required
               onBlur={handleInputPassword}
               type="password"
-              class="form-control block
+              className="form-control block
           w-full
           px-3
           py-1.5
@@ -127,15 +127,15 @@ const Register = () => {
             )}
              
           </div>
-          <div class="form-group mb-6">
-            <label class="form-label inline-block mb-2 text-gray-700">
+          <div className="form-group mb-6">
+            <label className="form-label inline-block mb-2 text-gray-700">
               Confirm Password
             </label>
             <input
               required
               onBlur={handleInputConfirmPassword}
               type="password"
-              class="form-control block
+              className="form-control block
           w-full
           px-3
           py-1.5
@@ -163,7 +163,7 @@ const Register = () => {
             )}
          <button
             type="submit"
-            class="
+            className="
         w-full
         px-6
         py-2.5
@@ -185,11 +185,11 @@ const Register = () => {
             Register
           </button>
          </div>
-          <p class="text-gray-800 mt-6 text-center text-sm">
+          <p className="text-gray-800 mt-6 text-center text-sm">
             Already have an account?{" "}
             <Link
               to="/login"
-              class="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out"
+              className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out"
             >
               Login
             </Link>

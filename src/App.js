@@ -6,6 +6,8 @@ import Register from "./Components/Authentication/Register/Register";
 import Inventory from "./Components/Inventory/Inventory";
 import ManageItems from "./Components/ManageItems/ManageItems";
 import MyCars from "./Components/MyCars/MyCars";
+import NotFound from "./Components/NotFound/NotFound";
+import Blogs from "./Components/Pages/Blogs/Blogs";
 import Home from "./Components/Pages/Home/Home";
 import Footer from "./Components/Shared/Footer/Footer";
 import Header from "./Components/Shared/Header/Header";
@@ -46,10 +48,10 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/blogs" element={<Blogs/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        
+        <Route path="*" element={<NotFound/>}/> 
       </Routes>
 
       <Footer />
