@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/Firebase.config";
 import { BiErrorCircle } from "react-icons/bi";
+import Loading from "../../Loading/Loading";
 
 const SocialLogin = () => {
   const [user] = useAuthState(auth);
@@ -12,6 +13,10 @@ const SocialLogin = () => {
   let from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
+
+    if(googleLoading ){
+      return <Loading/>
+    }
   if (user) {
     const url = "https://stormy-woodland-63975.herokuapp.com/login";
     fetch(url, {

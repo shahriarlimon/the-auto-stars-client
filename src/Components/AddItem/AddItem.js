@@ -5,7 +5,7 @@ import auth from "../../Firebase/Firebase.config";
 
 const AddItem = () => {
     const [user] = useAuthState(auth)
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit,reset } = useForm();
   const onSubmit = (data) => {
     const url = "https://stormy-woodland-63975.herokuapp.com/car";
     fetch(url, {
@@ -19,6 +19,7 @@ const AddItem = () => {
       .then((response) => response.json())
       .then((result) => {
         alert(result.success);
+        reset();
       });
   };
   return (

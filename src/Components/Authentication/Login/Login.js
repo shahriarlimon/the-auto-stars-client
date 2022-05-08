@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BiErrorCircle } from "react-icons/bi";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/Firebase.config";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { toast } from "react-toastify";
+import Loading from "../../Loading/Loading";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -13,6 +19,9 @@ const Login = () => {
   const [errors, setErrors] = useState({ emailError: "", passwordError: "" });
   const [signInWithEmailAndPassword, signInUser, signInLoading, signInError] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
+    const [user,loading] = useAuthState(auth)
   const navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
@@ -43,9 +52,40 @@ const Login = () => {
     e.preventDefault();
     signInWithEmailAndPassword(userInfo.email, userInfo.password);
   };
-  if (signInUser) {
-    navigate(from, { replace: true });
+
+   if(signInLoading || sending  || loading){
+     return <Loading/>
+   }
+
+  if (user) {
+    const url = "https://stormy-woodland-63975.herokuapp.com/login";
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+          localStorage.setItem("accessToken", data.token)
+         navigate(from, { replace: true });
+      });
+    
   }
+
+  const handlePasswordReset = async () => {
+    if (userInfo.email) {
+      await sendPasswordResetEmail(userInfo.email);
+      alert("Reset password email has been sent");
+    } else {
+      alert("Please enter your email");
+    }
+
+
+  };
   return (
     <div
       style={{
@@ -61,6 +101,7 @@ const Login = () => {
                 Email address
               </label>
               <input
+               autoComplete="off"
                 required
                 onBlur={handleInputEmail}
                 type="email"
@@ -95,6 +136,7 @@ const Login = () => {
                 Password
               </label>
               <input
+               autoComplete="off"
                 required
                 onBlur={handleInputPassword}
                 type="password"
@@ -152,6 +194,15 @@ const Login = () => {
               >
                 Login
               </button>
+              <p className="text-xs text-center mt-2">
+                Forgot password?{" "}
+                <button
+                  onClick={handlePasswordReset}
+                  className="text-green-700"
+                >
+                  Reset now
+                </button>
+              </p>
             </div>
             <p className="text-gray-800 mt-6 text-center text-sm">
               New to The autostars?{" "}
@@ -163,7 +214,7 @@ const Login = () => {
               </Link>
             </p>
             <div className="flex items-center justify-center my-4">
-            <SocialLogin/>
+              <SocialLogin />
             </div>
           </form>
         </div>
