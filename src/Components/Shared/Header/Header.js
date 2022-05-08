@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../Firebase/Firebase.config";
 import {AiFillCar} from "react-icons/ai";
+import CustomLink from "../../CustomLink/CustomLink";
 
 const Header = () => {
   const [user] = useAuthState(auth);
@@ -23,25 +24,25 @@ const Header = () => {
           <span className="ml-3 text-xl">The Autostars</span>
         </Link>
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <Link to="/" className="mr-5 hover:text-gray-900">
+          <CustomLink to="/" className="mr-5 hover:text-gray-900">
             Cars
-          </Link>
+          </CustomLink>
           {user && (
             <>
-              <Link to="/manageItems" className="mr-5 hover:text-gray-900">
+              <CustomLink to="/manageItems" className="mr-5 hover:text-gray-900">
                 Manage Items
-              </Link>
-              <Link to="/addItem" className="mr-5 hover:text-gray-900">
+              </CustomLink>
+              <CustomLink to="/addItem" className="mr-5 hover:text-gray-900">
                 Add Item
-              </Link>
-              <Link to="/myCars" className="mr-5 hover:text-gray-900">
+              </CustomLink>
+              <CustomLink to="/myCars" className="mr-5 hover:text-gray-900">
                 My Cars
-              </Link>
+              </CustomLink>
             </>
           )}
-          <Link to="/blogs" className="mr-5 hover:text-gray-900">
+          <CustomLink to="/blogs" className="mr-5 hover:text-gray-900">
             Blogs
-          </Link>
+          </CustomLink>
         </nav>
         {user ? (
           <button
@@ -62,7 +63,7 @@ const Header = () => {
             </svg>
           </button>
         ) : (
-          <Link to="/login">
+          <CustomLink to="/login">
             <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
               Login
               <svg
@@ -77,7 +78,7 @@ const Header = () => {
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
             </button>
-          </Link>
+          </CustomLink>
         )}
       </div>
     </header>

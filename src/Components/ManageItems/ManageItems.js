@@ -28,7 +28,7 @@ const ManageItems = () => {
     }
   };
   return (
-    <div className="relaive min-h-screen">
+    <div className="relaive min-h-screen mt-5">
       <div className="flex justify-end items-center fixed right-0 ">
       <Link to="/addItem" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Item</Link>
       </div>
@@ -41,37 +41,37 @@ const ManageItems = () => {
                 <tr>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     Car name
                   </th>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     Price
                   </th>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     Quantity
                   </th>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     Supplier
                   </th>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     img
                   </th>
                   <th
                     scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    className="text-md font-medium text-gray-900 px-6 py-4 text-left"
                   >
                     Action
                   </th>
