@@ -8,8 +8,9 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../Firebase/Firebase.config";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import Loading from "../../Loading/Loading";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
@@ -79,9 +80,9 @@ const Login = () => {
   const handlePasswordReset = async () => {
     if (userInfo.email) {
       await sendPasswordResetEmail(userInfo.email);
-      alert("Reset password email has been sent");
+      toast("Reset password email has been sent");
     } else {
-      alert("Please enter your email");
+      toast("Please enter your email");
     }
 
 
@@ -89,12 +90,12 @@ const Login = () => {
   return (
     <div
       style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")`,
+        backgroundImage: `url("https://img.freepik.com/free-vector/lightened-luxury-sedan-car-darkness-with-headlamps-rear-lights-lit-realistic-image-reflection_1284-28803.jpg?size=626&ext=jpg&ga=GA1.2.81491818.1652002642")`,
       }}
-      className="bg-cover hidden md:block w-full my-16"
+      className="bg-cover block w-full min-h-screen "
     >
-      <div className=" flex items-center justify-center ">
-        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
+      <div className=" flex items-center justify-center min-h-screen ">
+        <div className="block p-6 rounded-lg shadow-lg bg-white w-2/3 md:w-1/4">
           <form onSubmit={handleOnSubmit}>
             <div className="form-group mb-6">
               <label className="form-label inline-block mb-2 text-gray-700">
@@ -194,7 +195,7 @@ const Login = () => {
               >
                 Login
               </button>
-              <p className="text-xs text-center mt-2">
+              <p className="text-xs text-center mt-3">
                 Forgot password?{" "}
                 <button
                   onClick={handlePasswordReset}

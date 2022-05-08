@@ -66,13 +66,13 @@ const Register = () => {
   }
   return (
     <div
-      style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60")`,
-      }}
-      className="bg-cover hidden md:block w-full my-16"
+    style={{
+      backgroundImage: `url("https://img.freepik.com/free-vector/lightened-luxury-sedan-car-darkness-with-headlamps-rear-lights-lit-realistic-image-reflection_1284-28803.jpg?size=626&ext=jpg&ga=GA1.2.81491818.1652002642")`,
+    }}
+    className="bg-cover block w-full min-h-screen "
     >
-      <div className=" flex items-center justify-center ">
-        <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-1/2">
+      <div className=" flex items-center justify-center min-h-screen ">
+        <div className="block p-6 rounded-lg shadow-lg bg-white w-2/3 md:w-1/4">
           <form onSubmit={handleOnSubmit}>
             <div className="form-group mb-6">
               <label className="form-label inline-block mb-2 text-gray-700">

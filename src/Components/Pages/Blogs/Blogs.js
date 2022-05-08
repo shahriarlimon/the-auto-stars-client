@@ -34,6 +34,16 @@ const Blogs = () => {
                 
               </div>
             </div>
+            <div className="py-8 flex flex-wrap md:flex-nowrap">
+              <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                <span className="font-semibold title-font text-gray-700">NODE JS AND MONGODB</span>
+              </div>
+              <div className="md:flex-grow">
+                <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">When should one use nodejs and when should one use mongodb</h2>
+                <p className="leading-relaxed">Any project needs a programming environment and a runtime library that offers one basic programming tools/support and can compile and/or interpret oner code. Nodejs is such as tool for the Javascript programming language. There are other similar tools for other languages such as Python, Java, PHP, C#, C++, Go, etc.So, if anyone want to write some kind of stand-alone program or server in Javascript, then one can use nodejs for it.MongoDB is a database engine. Code within some application or server uses MongoDB to save, query or update data in a database. There are many web servers built with nodejs that will then use MongoDB for storing data.MongoDB offers an API library that runs within a Nodejs application to give one programmatic access to MongoDB so one can create databases and then add, query, update or delete data from the MongoDB database.</p>
+                
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -32,22 +32,22 @@ const Carousel = () => {
       <div className="carousel-inner relative w-full overflow-hidden">
         <div className="carousel-item active float-left w-full">
           <img 
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            className="block w-full h-[600px]"
+            src="https://t3.ftcdn.net/jpg/02/94/79/80/240_F_294798032_i3pg9SpMkrVhkKzdMNaZWRtsM9mc3p5c.jpg"
+            className="block w-full h-[400px]"
             alt="Wild Landscape"
           />
         </div>
         <div className="carousel-item float-left w-full">
           <img 
-            src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            className="block w-full h-[600px]"
+            src="https://t3.ftcdn.net/jpg/02/71/43/08/240_F_271430846_8elssL42vmrFWuxw52j2DI3Pl5Nsivlg.jpg"
+            className="block w-full h-[400px]"
             alt="Camera"
           />
         </div>
         <div className="carousel-item float-left w-full">
           <img 
-            src="https://images.unsplash.com/photo-1612825173281-9a193378527e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxhbWJvcmdoaW5pfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            className="block w-full h-[600px]"
+            src="https://t4.ftcdn.net/jpg/02/22/45/79/240_F_222457971_KlfIcIKYUg30545PnY3frg9A7c6Pu3Q4.jpg"
+            className="block w-full h-[400px]"
             alt="Exotic Fruits"
           />
         </div>

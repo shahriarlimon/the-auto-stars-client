@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useCars from "../../../../CustomHook/useCars";
+import Loading from "../../../../Loading/Loading";
 import SingleCar from "../../../../SingleCar/SingleCar";
 
 const Cars = () => {
   const [cars] = useCars();
   const navigate = useNavigate();
   /* https://wickedblocks.dev/grids/ */
+  if(window.location.reload === true){
+    return <Loading/>
+  }
+
 
   return (
     <section>
       <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+        <h1 className="text-3xl font-bold leading-none tracking-tighter text-neutral-600 my-4">Our Latest Listings</h1>
         <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
           {cars?.slice(0,6).map((car) => (
             <SingleCar key={car?._id}  car = {car} />

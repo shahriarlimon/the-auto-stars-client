@@ -19,11 +19,11 @@ const Footer = () => {
           </AiFillCar>
           <span className="ml-3 text-xl">The Autostars</span>
         </Link>
-            <p className="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+            <p className="mt-2 text-sm text-gray-500">It operates through the following segments: Automotive, Financial Services, and All Other.</p>
           </div>
           <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">TESLA</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a href="/"className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -40,7 +40,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">BMW</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a href="/"className="text-gray-600 hover:text-gray-800">First Link</a>
@@ -57,24 +57,24 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">FORD</h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a href="/"className="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a href="/" className="text-gray-600 hover:text-gray-800">First Link</a>
                 </li>
                 <li>
-                  <a href="/"className="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a href="/" className="text-gray-600 hover:text-gray-800">Second Link</a>
                 </li>
                 <li>
-                  <a href="/"className="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a href="/" className="text-gray-600 hover:text-gray-800">Third Link</a>
                 </li>
                 <li>
-                  <a href="/"className="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a href="/" className="text-gray-600 hover:text-gray-800">Fourth Link</a>
                 </li>
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">AUDI</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a href="/"className="text-gray-600 hover:text-gray-800">First Link</a>

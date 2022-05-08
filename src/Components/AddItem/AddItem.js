@@ -23,12 +23,12 @@ const AddItem = () => {
       });
   };
   return (
-    <div>
+    <div className="min-h-screen">
       <form
         className="flex flex-col justify-center items-center w-full bg-white"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="text-2xl my-4">Add Car</h1>
+        <h1 className="text-4xl my-4">Add Car</h1>
         <input 
          required
           type="text"

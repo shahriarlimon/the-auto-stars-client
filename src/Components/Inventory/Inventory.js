@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import useCars from "../CustomHook/useCars";
 
 const Inventory = () => {
@@ -25,7 +26,7 @@ const Inventory = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        alert('Delivered!')
+        toast('Delivered!')
       });
   }
   const handleFormSubmit = (e) => {
@@ -47,7 +48,6 @@ const Inventory = () => {
       .then((response) => response.json())
       .then((data) => {
         e.target.reset();
-        console.log(data);
       });
   };
   return (
@@ -82,6 +82,12 @@ const Inventory = () => {
               {car?.description}
             </p>
             <div className="inline-flex justify-between  w-full">
+              <h1 className="mb-8 text-sm font-semibold leading-none tracking-tighter text-neutral-600  ">
+                Available
+              </h1>
+              <span className="text-sm"> ID: {car?._id}</span>
+            </div>
+            <div className="inline-flex justify-between  w-full">
               <h1 className="mb-8 text-xl font-semibold leading-none tracking-tighter text-neutral-600  ">
                 ${car?.price}
               </h1>
@@ -108,11 +114,11 @@ const Inventory = () => {
                   <label for="member_email" className="sr-only">
                     Email address
                   </label>
-                  <input
+                  <input required
                     name="stock"
                     id="cta-email"
-                    type="number"
-                    className="block w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform bg-transparent border border-transparent rounded-md text-neutral-600 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
+                    type="number" 
+                    className="block  w-full px-5 py-3 text-base placeholder-gray-300 transition duration-500 ease-in-out transform bg-transparent border border-transparent rounded-md text-neutral-600 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300"
                     placeholder="Enter stock number  "
                   />
                 </div>
