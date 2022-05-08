@@ -5,13 +5,13 @@ import Loading from "../../../../Loading/Loading";
 import SingleCar from "../../../../SingleCar/SingleCar";
 
 const Cars = () => {
-  const [cars] = useCars();
+  const [cars,setCars, loading,setLoading] = useCars();
   const navigate = useNavigate();
   /* https://wickedblocks.dev/grids/ */
-  if(window.location.reload === true){
+  if(loading){
     return <Loading/>
   }
-
+  
 
   return (
     <section>

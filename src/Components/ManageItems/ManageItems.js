@@ -1,7 +1,7 @@
 import React from "react";
 import useCars from "../CustomHook/useCars";
 import { AiFillDelete } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import useUploadCars from "../CustomHook/useUploadCars";
 
 const ManageItems = () => {
@@ -26,6 +26,8 @@ const ManageItems = () => {
           }
         });
     }
+
+   
   };
   return (
     <div className="relaive min-h-screen mt-5">
